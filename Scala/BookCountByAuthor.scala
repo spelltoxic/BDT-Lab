@@ -8,7 +8,7 @@ object BookCountByAuthor {
       ("Jon Stone", "Big Bird in China"),
       ("Dr. Seuss", "One Fish, Two Fish, Red Fish, Blue Fish")
     )
-    val bookCount=books.groupBy(_._1).view.mapValues(_.size)
+    val bookCount=books.groupBy(_._1).mapValues(_.size)
 
     bookCount.foreach { case (author, count) =>
       println(s"$author published $count book(s)")
